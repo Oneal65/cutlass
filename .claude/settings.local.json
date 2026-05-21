@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nvidia-smi)",
+      "Bash(nvcc --version)",
+      "WebFetch(domain:developer.nvidia.com)",
+      "WebFetch(domain:docs.nvidia.com)",
+      "Bash(find /apdcephfs_zwfy/share_303937731/onealliu/cutlass/media -name efficient_gemm*)",
+      "Bash(xargs ls:*)",
+      "Bash(nvidia-smi --query-gpu=name,compute_cap --format=csv,noheader2)",
+      "Bash(cmake .. -DCUTLASS_NVCC_ARCHS=90a -DCMAKE_BUILD_TYPE=Release -DCUTLASS_ENABLE_EXAMPLES=ON -DCUTLASS_ENABLE_TESTS=OFF)",
+      "Bash(tee cmake_config.log)",
+      "Bash(CUDA_VISIBLE_DEVICES=0 ./examples/03_visualize_layout/03_visualize_layout)",
+      "Bash(__NEW_LINE_06d0bfffba4e9c0f__ echo:*)",
+      "Bash(CUDA_VISIBLE_DEVICES=0 ./examples/03_visualize_layout/03_visualize_layout ColumnMajor --extent=4,4)",
+      "Bash(CUDA_VISIBLE_DEVICES=0 ./examples/03_visualize_layout/03_visualize_layout RowMajor --extent=4,4)",
+      "Bash(echo \"TensorOpMultiplicand<8,32> —— Tensor Core Shared Memory 布局（含 Swizzle）\")",
+      "Bash(CUDA_VISIBLE_DEVICES=0 ./examples/03_visualize_layout/03_visualize_layout \"TensorOpMultiplicand<8,32>\" --extent=8,32 --vectorize=4)",
+      "Bash(__NEW_LINE_b5baeba0cae758d2__ echo:*)",
+      "Bash(echo \"TensorOpMultiplicand<16,32> —— Tensor Core Shared Memory 含 Swizzle\")",
+      "Bash(CUDA_VISIBLE_DEVICES=0 ./examples/03_visualize_layout/03_visualize_layout \"TensorOpMultiplicand<16,32>\" --extent=16,32)",
+      "Bash(echo \"RowMajorInterleaved<4> —— 交错布局（CUTLASS 用于向量化访问）\")",
+      "Bash(CUDA_VISIBLE_DEVICES=0 ./examples/03_visualize_layout/03_visualize_layout \"RowMajorInterleaved<4>\" --extent=4,16)",
+      "Bash(cd:*)",
+      "Bash(__NEW_LINE_fd04e5b679dc8734__ echo:*)",
+      "Bash(for SIZE in 128 512 1024 2048 4096)",
+      "Bash(do)",
+      "Bash(echo -n \"  M=N=K=$SIZE → \")",
+      "Bash(CUDA_VISIBLE_DEVICES=0 ./examples/00_basic_gemm/00_basic_gemm $SIZE $SIZE $SIZE)",
+      "Bash(tee -a /apdcephfs_zwfy/share_303937731/onealliu/cutlass/dive/logs/day2_baseline.log echo \"\")",
+      "Bash(tee -a /apdcephfs_zwfy/share_303937731/onealliu/cutlass/dive/logs/day2_baseline.log __NEW_LINE_3bf87e2c21d94a82__ for SIZE in 512 1024 2048 4096)",
+      "Bash(do CUDA_VISIBLE_DEVICES=0 ./gemm_timer $SIZE $SIZE $SIZE)",
+      "Bash(tee -a /apdcephfs_zwfy/share_303937731/onealliu/cutlass/dive/logs/day2_baseline.log done)"
+    ]
+  }
+}

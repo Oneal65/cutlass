@@ -1,0 +1,51 @@
+===== H20 基线性能数据：CUTLASS SIMT SGEMM =====
+时间: Thu Mar 19 16:03:56 CST 2026
+
+==============================================================
+  CUTLASS GEMM Timer  (SIMT SGEMM, ColumnMajor)
+  Problem : M=512  N=512  K=512
+==============================================================
+  Avg Time         : 0.051 ms
+  GFLOP/s          : 5305.552  GFLOPS
+  Arith Intensity  : 85.333  FLOP/byte
+  Est. BW used     : 62.174  GB/s
+  H20 HBM3 peak    : 4096.000  GB/s
+  Roofline bound   : Compute-bound (crossover AI = 16.8)
+==============================================================
+
+==============================================================
+  CUTLASS GEMM Timer  (SIMT SGEMM, ColumnMajor)
+  Problem : M=1024  N=1024  K=1024
+==============================================================
+  Avg Time         : 0.097 ms
+  GFLOP/s          : 22127.692  GFLOPS
+  Arith Intensity  : 170.667  FLOP/byte
+  Est. BW used     : 129.654  GB/s
+  H20 HBM3 peak    : 4096.000  GB/s
+  Roofline bound   : Compute-bound (crossover AI = 16.8)
+==============================================================
+
+==============================================================
+  CUTLASS GEMM Timer  (SIMT SGEMM, ColumnMajor)
+  Problem : M=2048  N=2048  K=2048
+==============================================================
+  Avg Time         : 0.801 ms
+  GFLOP/s          : 21459.815  GFLOPS
+  Arith Intensity  : 341.333  FLOP/byte
+  Est. BW used     : 62.871  GB/s
+  H20 HBM3 peak    : 4096.000  GB/s
+  Roofline bound   : Compute-bound (crossover AI = 16.8)
+==============================================================
+
+==============================================================
+  CUTLASS GEMM Timer  (SIMT SGEMM, ColumnMajor)
+  Problem : M=4096  N=4096  K=4096
+==============================================================
+  Avg Time         : 5.861 ms
+  GFLOP/s          : 23450.456  GFLOPS
+  Arith Intensity  : 682.667  FLOP/byte
+  Est. BW used     : 34.351  GB/s
+  H20 HBM3 peak    : 4096.000  GB/s
+  Roofline bound   : Compute-bound (crossover AI = 16.8)
+==============================================================
+

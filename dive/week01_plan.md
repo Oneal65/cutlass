@@ -542,9 +542,9 @@ grep "sm__throughput" /apdcephfs_zwfy/share_303937731/onealliu/cutlass/dive/logs
 ## 每日 Checklist
 
 ### Day 1
-- [ ] 阅读完 Efficient GEMM in CUDA 全文
-- [ ] 手绘 GEMM 三级分块图
-- [ ] 理解为什么 Shared Memory 是性能关键
+- [x] 阅读完 Efficient GEMM in CUDA 全文
+- [x] 手绘 GEMM 三级分块图
+- [x] 理解为什么 Shared Memory 是性能关键
 
 ### Day 2
 - [ ] `build_release` 目录创建并 cmake 成功
